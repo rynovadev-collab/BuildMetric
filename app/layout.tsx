@@ -3,6 +3,7 @@ import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { siteName, siteUrl } from "@/lib/site";
+import { Analytics } from "@vercel/analytics/next"
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-[#f7f9f8] font-sans text-slate-900 antialiased">
         <SiteHeader />
         {children}
+        <Analytics/>
         <SiteFooter />
       </body>
     </html>

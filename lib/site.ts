@@ -1,7 +1,6 @@
 export const siteName = "BuildMetric";
 // Change this before launch to your real domain. Avoid publishing example.com canonical URLs.
-export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+export const siteUrl = "https://buildmetric-coral.vercel.app";
 export const calculators = [
   {
     slug: "mot-type-1-calculator",

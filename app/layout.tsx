@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   verification:{
     google: "NkqaVkDVX43AZqfXJBGh8-gfCzOc5b2-kCGfJzmMx-8"
+  },
+  icons:{
+    icon: "icon.webp"
   }
 };
 export default function RootLayout({

@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BuildMetric — UK Construction Calculators
 
-## Getting Started
+Next.js 16 App Router, React 19, TypeScript, Tailwind 4, Lucide. Built on the supplied project structure.
 
-First, run the development server:
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Before deployment (important)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Choose the final brand and domain. Set `NEXT_PUBLIC_SITE_URL=https://your-domain.co.uk` in Vercel project environment variables (and `.env.local` for local testing). This is used for canonical URLs and sitemap.
+2. Replace the placeholder **Privacy** and **Terms** pages with real policies and required business identity/address disclosures. These pages are deliberately marked noindex until complete.
+3. Update `rynovadev@gmail.com` if a different contact inbox is preferred.
+4. Test material assumptions with suppliers and construction professionals; default densities and prices are illustrative only.
+6. Add actual favicon/brand assets and test on mobile. Do not claim measured traffic or advertiser results until you have evidence.
 
-## Learn More
+## Calculations
 
-To learn more about Next.js, take a look at the following resources:
+`lib/calculations.ts` contains pure calculation functions. All dimensions are converted to metres and millimetres. The depth entered is the finished compacted depth; the result is an estimated mass using a user-adjustable bulk density and wastage factor. Bag counts are rounded up. For screed, bag yields can differ significantly by manufacturer; check product coverage.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## SEO
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Three distinct indexable calculator pages, static metadata, sitemap, robots, internal links and helpful descriptions. Check real UK SERPs before finalising keyword targeting. Related keyword volumes must not simply be added because intent may overlap.

@@ -1,2 +1,27 @@
-import Link from 'next/link';import {Calculator} from 'lucide-react';
-export function SiteHeader(){return <header className="border-b border-slate-200 bg-white"><div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-5 sm:px-8"><Link href="/" className="flex items-center gap-2.5 text-xl font-extrabold tracking-tight text-slate-950"><span className="rounded-xl bg-teal-700 p-2 text-white"><Calculator size={22}/></span>Build<span className="-ml-2 text-teal-700">Metric</span></Link><nav className="flex items-center gap-5 text-sm font-semibold text-slate-600"><Link className="hover:text-teal-800" href="/#calculators">Calculators</Link><Link className="hidden hover:text-teal-800 sm:block" href="/about">About</Link></nav></div></header>}
+import Link from "next/link";
+import { Calculator } from "lucide-react";
+export function SiteHeader() {
+  return (
+    <header className="border-b border-slate-200 bg-white">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-5 sm:px-8">
+        <Link
+          href="/"
+          className="flex items-center gap-2.5 text-xl font-extrabold tracking-tight text-slate-950"
+        >
+          <span className="rounded-xl bg-teal-700 p-2 text-white">
+            <Calculator size={22} />
+          </span>
+          Build<span className="-ml-2 text-teal-700">Metric</span>
+        </Link>
+        <nav className="flex items-center gap-5 text-sm font-semibold text-slate-600">
+          <Link className="hover:text-teal-800" href="/#calculators">
+            Calculators
+          </Link>
+          <Link className="hidden hover:text-teal-800 sm:block" href="/about">
+            About
+          </Link>
+        </nav>
+      </div>
+    </header>
+  );
+}

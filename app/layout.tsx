@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   },
   description:
     "Free UK construction calculators for MOT Type 1, screed and sub-base quantities, bags and estimated costs.",
+    applicationName: "BuildMetric",
+    openGraph: {
+      siteName: "BuildMetric",
+      type: "website",
+    },
   robots: { index: true, follow: true },
   verification:{
     google: "NkqaVkDVX43AZqfXJBGh8-gfCzOc5b2-kCGfJzmMx-8"

@@ -1,3 +1,138 @@
-import Link from 'next/link';import {ArrowRight,ArrowUpRight,Calculator,CheckCircle2,Layers,Ruler,Shovel,TrendingUp} from 'lucide-react';import {calculators} from '@/lib/site';
-const icons=[Layers,Ruler,Shovel];
-export default function Home(){return <main><section className="relative overflow-hidden bg-[#103d39] text-white"><div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-teal-500/10 blur-3xl"/><div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28"><div className="mb-6 inline-flex items-center gap-2 rounded-full border border-teal-400/30 bg-teal-300/10 px-4 py-2 text-xs font-semibold tracking-wide text-teal-100"><CheckCircle2 size={15}/> FREE UK CONSTRUCTION TOOLS</div><h1 className="max-w-4xl text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-6xl">Measure with confidence.<br/><span className="text-[#80dfc3]">Build with clarity.</span></h1><p className="mt-6 max-w-2xl text-lg leading-8 text-teal-50/80">Simple, practical calculators for aggregates, flooring and groundworks. Estimate materials, quantities and costs before your next project.</p><Link href="#calculators" className="mt-9 inline-flex items-center gap-3 rounded-xl bg-[#c3f4a6] px-6 py-4 font-bold text-[#123a32] hover:bg-white">Explore calculators <ArrowRight size={18}/></Link><div className="mt-14 flex flex-wrap gap-x-8 gap-y-3 text-sm text-teal-100/80"><span>✓ No sign-up required</span><span>✓ Instant estimates</span><span>✓ UK-focused units</span></div></div></section><section id="calculators" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20"><div className="mb-9 flex flex-wrap items-end justify-between gap-4"><div><p className="text-xs font-extrabold uppercase tracking-[0.2em] text-teal-700">Tools for the job</p><h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Construction calculators</h2><p className="mt-3 text-slate-500">Start with the measurement. Get an estimate in seconds.</p></div><span className="text-sm font-semibold text-slate-400">03 available tools</span></div><div className="grid gap-5 md:grid-cols-3">{calculators.map((c,i)=>{const Icon=icons[i];return <Link key={c.slug} href={'/'+c.slug} className="group rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-teal-300 hover:shadow-xl"><div className="flex items-start justify-between"><span className="rounded-2xl bg-teal-50 p-4 text-teal-700"><Icon size={27}/></span><ArrowUpRight className="text-slate-300 transition group-hover:text-teal-700"/></div><p className="mt-8 text-xs font-bold uppercase tracking-[0.16em] text-teal-700">{c.tag}</p><h3 className="mt-2 text-xl font-bold">{c.name}</h3><p className="mt-3 min-h-20 text-sm leading-6 text-slate-500">{c.desc}</p><span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-teal-800">Open calculator <ArrowRight size={16}/></span></Link>})}</div></section><section className="mx-auto max-w-7xl px-5 pb-16 sm:px-8"><div className="rounded-3xl bg-[#e9f2ed] p-8 sm:p-10"><p className="text-xs font-bold uppercase tracking-[0.2em] text-teal-800">Made for real projects</p><h2 className="mt-3 text-3xl font-extrabold">Less guesswork. Better planning.</h2><p className="mt-4 max-w-2xl leading-7 text-slate-600">Our tools calculate geometric quantities from your measurements, with editable material assumptions. Use them to plan purchases and compare quotes, then confirm final specifications with your supplier or contractor.</p><div className="mt-6 flex flex-wrap gap-4 text-sm font-semibold text-teal-900"><span className="flex items-center gap-2"><Calculator size={18}/> Instant results</span><span className="flex items-center gap-2"><TrendingUp size={18}/> Adjustable estimates</span></div></div></section></main>}
+import Link from "next/link";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Calculator,
+  CheckCircle2,
+  Layers,
+  Ruler,
+  Shovel,
+  TrendingUp,
+} from "lucide-react";
+import { calculators } from "@/lib/site";
+const icons = [Layers, Ruler, Shovel];
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "BuildMetric",
+  url: "https://buildmetric-coral.vercel.app/",
+};
+
+export default function Home() {
+  return (
+    <main>
+        
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteSchema),
+        }}
+      />
+
+      <section className="relative overflow-hidden bg-[#103d39] text-white">
+        <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-teal-500/10 blur-3xl" />
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-teal-400/30 bg-teal-300/10 px-4 py-2 text-xs font-semibold tracking-wide text-teal-100">
+            <CheckCircle2 size={15} /> FREE UK CONSTRUCTION TOOLS
+          </div>
+          <h1 className="max-w-4xl text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-6xl">
+            Measure with confidence.
+            <br />
+            <span className="text-[#80dfc3]">Build with clarity.</span>
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-teal-50/80">
+            Simple, practical calculators for aggregates, flooring and
+            groundworks. Estimate materials, quantities and costs before your
+            next project.
+          </p>
+          <Link
+            href="#calculators"
+            className="mt-9 inline-flex items-center gap-3 rounded-xl bg-[#c3f4a6] px-6 py-4 font-bold text-[#123a32] hover:bg-white"
+          >
+            Explore calculators <ArrowRight size={18} />
+          </Link>
+          <div className="mt-14 flex flex-wrap gap-x-8 gap-y-3 text-sm text-teal-100/80">
+            <span>✓ No sign-up required</span>
+            <span>✓ Instant estimates</span>
+            <span>✓ UK-focused units</span>
+          </div>
+        </div>
+      </section>
+      <section
+        id="calculators"
+        className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20"
+      >
+        <div className="mb-9 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-teal-700">
+              Tools for the job
+            </p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
+              Construction calculators
+            </h2>
+            <p className="mt-3 text-slate-500">
+              Start with the measurement. Get an estimate in seconds.
+            </p>
+          </div>
+          <span className="text-sm font-semibold text-slate-400">
+            03 available tools
+          </span>
+        </div>
+        <div className="grid gap-5 md:grid-cols-3">
+          {calculators.map((c, i) => {
+            const Icon = icons[i];
+            return (
+              <Link
+                key={c.slug}
+                href={"/" + c.slug}
+                className="group rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-teal-300 hover:shadow-xl"
+              >
+                <div className="flex items-start justify-between">
+                  <span className="rounded-2xl bg-teal-50 p-4 text-teal-700">
+                    <Icon size={27} />
+                  </span>
+                  <ArrowUpRight className="text-slate-300 transition group-hover:text-teal-700" />
+                </div>
+                <p className="mt-8 text-xs font-bold uppercase tracking-[0.16em] text-teal-700">
+                  {c.tag}
+                </p>
+                <h3 className="mt-2 text-xl font-bold">{c.name}</h3>
+                <p className="mt-3 min-h-20 text-sm leading-6 text-slate-500">
+                  {c.desc}
+                </p>
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-teal-800">
+                  Open calculator <ArrowRight size={16} />
+                </span>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+      <section className="mx-auto max-w-7xl px-5 pb-16 sm:px-8">
+        <div className="rounded-3xl bg-[#e9f2ed] p-8 sm:p-10">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-teal-800">
+            Made for real projects
+          </p>
+          <h2 className="mt-3 text-3xl font-extrabold">
+            Less guesswork. Better planning.
+          </h2>
+          <p className="mt-4 max-w-2xl leading-7 text-slate-600">
+            Our tools calculate geometric quantities from your measurements,
+            with editable material assumptions. Use them to plan purchases and
+            compare quotes, then confirm final specifications with your supplier
+            or contractor.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-4 text-sm font-semibold text-teal-900">
+            <span className="flex items-center gap-2">
+              <Calculator size={18} /> Instant results
+            </span>
+            <span className="flex items-center gap-2">
+              <TrendingUp size={18} /> Adjustable estimates
+            </span>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
